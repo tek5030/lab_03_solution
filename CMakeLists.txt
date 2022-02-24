@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.5.1 )
 
-project(lab_3_corners)
+project(solution_corners)
 
 # Compiler flags
 if (MSVC)
@@ -24,8 +24,8 @@ add_executable(${PROJECT_NAME}
   corner_detector.cpp
   filters.h
   filters.cpp
-  lab_3.h
-  lab_3.cpp)
+  solution_corners.h
+  solution_corners.cpp)
 
 target_link_libraries(${PROJECT_NAME}
   ${OpenCV_LIBS}

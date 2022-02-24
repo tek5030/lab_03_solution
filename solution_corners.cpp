@@ -1,4 +1,4 @@
-#include "lab_3.h"
+#include "solution_corners.h"
 #include "corner_detector.h"
 #include <chrono>
 
@@ -6,24 +6,27 @@
 using Clock = std::chrono::high_resolution_clock;
 using DurationInMs = std::chrono::duration<double, std::milli>;
 
-void lab3()
+void runSolutionCorners()
 {
   // Open video stream from camera.
   const int camera_id = 0; // Should be 0 or 1 on the lab PCs.
   cv::VideoCapture cap(camera_id);
+  cap.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+  cap.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+
   if (!cap.isOpened())
   {
     throw std::runtime_error("Could not open camera");
   }
 
   // Create window.
-  const std::string win_name = "Lab 3: Corner detection";
+  const std::string win_name = "Lab: Estimating circles from corners";
   cv::namedWindow(win_name);
 
   // Construct the corner detector.
   // Play around with the parameters!
   // When the second argument is true, additional debug visualizations are shown.
-  CornerDetector det(CornerMetric::harris, true);
+  CornerDetector det(CornerMetric::harris);
 
   // Construct the circle estimator.
   CircleEstimator estimator;
