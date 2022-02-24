@@ -3,8 +3,8 @@
 #include "circle_estimator.h"
 #include "opencv2/core.hpp"
 
-/// \brief Runs lab 3.
-void lab3();
+/// \brief Runs the solution.
+void runSolutionCorners();
 
 /// \brief Converts OpenCV keypoints to an Eigen matrix of Vector2f columns.
 /// \param keypoints Vector of keypoints.
