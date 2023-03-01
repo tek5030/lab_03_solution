@@ -16,11 +16,11 @@ void runSolutionCorners()
 
   if (!cap.isOpened())
   {
-    throw std::runtime_error("Could not open camera");
+    throw std::runtime_error("Could not open camera by index " + std::to_string(camera_id));
   }
 
   // Create window.
-  const std::string win_name = "Lab: Estimating circles from corners";
+  const std::string win_name = "Solution: Estimating circles from corners";
   cv::namedWindow(win_name);
 
   // Construct the corner detector.
