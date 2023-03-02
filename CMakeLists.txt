@@ -59,10 +59,3 @@ target_compile_options(${exe_name} PRIVATE
 target_compile_definitions(${exe_name} PUBLIC
   "$<${msvc_cxx}: -D_USE_MATH_DEFINES>"
   )
-
-# Copy test images to build directory so they are easy to find.
-set(test_images
-  )
-file(COPY ${test_images}
-  DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/
-  )
